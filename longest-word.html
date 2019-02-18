@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Return Longest Word</title>
+</head>
+<body>
+  
+  <script>
+    const sentence1= 'The quick brown fox jumped over the lazy dog';
+    const sentence2 = 'May the force be with you';
+    const sentence3 = 'What if we try a super-long word such as otorhinolaryngology';
+
+    function calcLongestWord(sen){
+
+      // break sentence down into array
+      sen = sen.split(' ');
+
+      // set longest word to first word
+      let longestWord = sen[0];
+
+	  // loop through array and reset longest word if array item is longer
+      for (i = 1; i < sen.length; i++){
+        if (sen[i].length > longestWord.length){
+          longestWord = sen[i];
+        }
+      }
+
+      return longestWord;
+
+    }
+
+    // set variable to easily test multiple strings
+	let answer = calcLongestWord(sentence3);
+	// display answer
+	console.log(answer);
+
+  </script>
+</body>
+</html>
